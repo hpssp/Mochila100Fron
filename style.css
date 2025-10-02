@@ -1,0 +1,499 @@
+:root {
+  --bg: #1a1a2b;
+  --card: #111122;
+  --muted: #bfc9d9;
+  --accent-purple: #9d4edd;
+  --accent-green: #00ff99;
+  --glass: rgba(255, 255, 255, 0.03);
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%
+}
+
+body {
+  margin: auto;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg) 0%, #0b0b12 100%);
+  color: #e6eef8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+}
+
+/* Container */
+.container {
+  width: min(1100px, 94%);
+  margin: 0 auto;
+  padding: 2rem 0
+}
+
+/* Header */
+.header {
+  background: linear-gradient(90deg, #0f3377, #076827a1);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.02)
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem
+}
+
+.logo img {
+  width: 60px;
+  height: 85px;
+  filter: drop-shadow(0 0 6px rgba(255, 102, 0, 0.459))
+}
+
+.logo strong {
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, rgb(192, 233, 12) 0%, rgb(13, 201, 207) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(207, 221, 78, 0.16);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.2rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px
+}
+
+.nav-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.nav-list a {
+  color: transparent;
+  background-clip: text;
+  background: linear-gradient(90deg, rgb(18, 221, 11) 0%, rgb(193, 224, 12) 100%);
+  text-shadow: 0 0 10px rgba(221, 200, 78, 0.082);
+  text-decoration: none;
+  padding: 0.6rem;
+  border-radius: 6px;
+  transition: all .18s;
+  font-size: 1.1rem;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-list a:hover {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.199);
+  transform: translateY(-3px)
+}
+
+
+/* Hero */
+.hero {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, rgba(157, 78, 221, 0.08), rgba(0, 255, 153, 0.03));
+  border-radius: 12px;
+  margin: 1.2rem 0
+}
+
+.hero .lead {
+  color: var(--muted);
+}
+
+.btn {
+  margin: 10px;
+  display: inline-block;
+  background: rgb(255, 255, 255);
+  color: #000000;
+  background-clip: padding-box;
+  border: none;
+  padding: .75rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 110, 255, 0.08);
+  text-decoration: none;
+  transition: all .4s;
+}
+
+.btn:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 7px 0 -2px #00f7ff,
+    0 15px 0 -4px #39a2db,
+    0 16px 10px -3px #39a2db;
+}
+
+.btn:active {
+  transition: all 0.2s;
+  transform: translateY(-5px);
+  background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 94, 247, 1) 17.8%, rgba(2, 245, 255, 1) 100.2%);
+  box-shadow: 0 2px 0 -2px #f5f859,
+    0 8px 0 -4px #39a2db,
+    0 12px 10px -3px #39a2db;
+}
+
+.btn.ghost {
+  background: rgb(0, 110, 255);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: white
+}
+
+.btn.ghost:active {
+  transition: all 0.2s;
+  transform: translateY(-5px);
+  background: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 94, 247, 1) 17.8%, rgba(2, 245, 255, 1) 100.2%);
+  box-shadow: 0 2px 0 -2px #f5f859,
+    0 8px 0 -4px #39a2db,
+    0 12px 10px -3px #39a2db;
+}
+
+/* Sections */
+.section {
+  padding: 2.6rem 0
+}
+
+.section.alt {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+  border-radius: 10px;
+  padding: 2.6rem;
+  margin: 1rem 0
+}
+
+/* Grid and cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem
+}
+
+.card {
+  background: #1C1A1C;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  box-shadow: 0 6px 20px rgba(13, 12, 20, 0.6);
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  background-image: conic-gradient(rgb(189, 96, 9), rgb(29, 29, 31));
+  padding: 12px;
+  transition: all 0.4s;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.card:hover {
+  box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0),
+    inset 0px -4px 0px 0px rgba(0, 0, 0, 0),
+    0px 0px 0px 4px rgba(255, 255, 255, 0.151),
+    0px 0px 180px 0px #030b7544;
+  transform: translateY(-2px);
+}
+
+#plano-onca:hover {
+  background: linear-gradient(180deg, #ca4a00, #1a1f01a2);
+}
+
+#plano-onca img {
+  background: repeating-linear-gradient(45deg, #e2080854, #fc6500 20px, #000000de 20px, #610606de 40px);
+}
+
+#plano-aguia:hover {
+  background: linear-gradient(180deg, #0044fd, #fdf90156);
+}
+
+#plano-aguia img {
+ background: radial-gradient(125% 125% at -2% 101%,
+      rgb(101, 124, 255) 10.5%,
+      rgb(2, 217, 245) 16%,
+      rgb(255, 166, 233) 17.5%,
+      rgb(95, 162, 248) 25%,
+      rgb(238, 208, 174) 40%,
+      rgba(202, 179, 214, 1) 65%,
+      rgb(30, 145, 218) 100%);
+}
+
+#plano-tamandua:hover {
+  background: linear-gradient(180deg, #00ff0d81, #c1d60750);
+}
+
+#plano-tamandua img {
+  background: rgb(0, 0, 0);
+  background: radial-gradient(125% 125% at 50% 10%, #d3df36 40%, rgb(51, 238, 60) 100%);
+  z-index: -10;
+}
+
+/*Card-Center*/
+.grid-center {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card-center {
+  background: #1C1A1C;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  box-shadow: 0 6px 20px rgba(13, 12, 20, 0.6);
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
+  margin: 100px;
+}
+
+.Bandeira_Uruguai {
+  width: 40%;
+  height: 40%;
+  margin-top: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Bandeira_Equador {
+   margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  display: block;
+}
+
+.ANIMAIS {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  background-image: conic-gradient(rgba(0, 0, 0, 0), rgb(29, 29, 31));
+  padding: 12px;
+  transition: all 0.4s;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+  font-size: 30px;
+  font-weight: 900;
+}
+
+#fundo-onca img {
+ background: repeating-linear-gradient(45deg, #e2080854, #fc6500 20px, #000000de 20px, #610606de 40px);
+}
+
+#fundo-aguia img {
+  background: radial-gradient(125% 125% at -2% 101%,
+      rgb(101, 124, 255) 10.5%,
+      rgb(2, 217, 245) 16%,
+      rgb(255, 166, 233) 17.5%,
+      rgb(95, 162, 248) 25%,
+      rgb(238, 208, 174) 40%,
+      rgba(202, 179, 214, 1) 65%,
+      rgb(30, 145, 218) 100%);
+}
+
+#fundo-tamandua img {
+  background: rgb(0, 0, 0);
+  background: radial-gradient(125% 125% at 50% 10%, #d3df36 40%, rgb(51, 238, 60) 100%);
+  z-index: -10;
+}
+
+#onca-plano-title,
+#arara-plano-title,
+#tamandua-plano-title {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(238, 238, 238) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 10px rgba(221, 200, 78, 0.082);
+
+}
+
+.Mapa_da_America {
+  width: 50%;
+  height: auto;
+  margin-top: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tips */
+.tips {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: .6rem
+}
+
+.tips li {
+  background: linear-gradient(90deg, rgba(157, 78, 221, 0.02), rgba(0, 255, 153, 0.02));
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.02)
+}
+
+/* Quiz styles */
+.quiz-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.question {
+  margin-bottom: 1rem
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  margin-top: .6rem
+}
+
+.option {
+  display: flex;
+  gap: .8rem;
+  align-items: center;
+  padding: .6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+
+  border: 3px solid #315cfd;
+
+  transition: all 0.3s;
+  font-size: 1em;
+  font-weight: 550;
+}
+
+.option:hover {
+  background: #315cfd;
+  color: white;
+  font-size: 1.2em;
+}
+
+
+.option input {
+  accent-color: var(--accent-green)
+}
+
+.option.correct {
+  outline: 3px solid rgba(0, 255, 153, 0.12)
+}
+
+.option.wrong {
+  opacity: 0.65
+}
+
+/* Contact */
+.contact-form {
+  display: grid;
+  gap: .6rem;
+  max-width: 700px
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: .7rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  color: inherit
+}
+
+.bi_bi-heart-fill {
+  color: red
+}
+
+/* Footer */
+.footer {
+  padding: 1.6rem 0;
+  color: var(--muted);
+  font-size: .9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  margin-top: 2rem
+}
+
+/* CANAIS */
+.footer svg {
+  margin: 0 6px;
+  vertical-align: middle;
+}
+
+
+/* Small screens */
+@media (max-width:720px) {
+  .menu-toggle {
+    display: inline-block
+  }
+
+  .nav-list {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    top: 64px;
+    background: #071021;
+    padding: 1rem;
+    border-radius: 8px;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6)
+  }
+
+  .nav-list.show {
+    display: flex
+  }
+}
